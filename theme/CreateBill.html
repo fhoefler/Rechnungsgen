@@ -56,8 +56,8 @@
       <div class="collapse navbar-collapse" id="navbarmain">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="Kunden.html">Kunden verwalten</a></li>
-          <li class="nav-item"><a class="nav-link" href="Kunden.html">Produkte verwalten</a></li>
-          <li class="nav-item"><a class="nav-link" href="Kunden.html">Firmendaten verwalten</a></li>
+          <li class="nav-item"><a class="nav-link" href="Product.html">Produkte verwalten</a></li>
+          <li class="nav-item"><a class="nav-link" href="ChangeCompanydata.html">Firmendaten verwalten</a></li>
           <li class="nav-item"><a class="nav-link" style="background-color:mediumspringgreen" href="CreateBill.html">Rechnungen
             erstellen</a></li>
         </ul>
@@ -67,55 +67,80 @@
 </header>
 <br>
 <br>
-<div class="row">
-    <div class="col-sm-4">
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
       <div class="contact-block mb-4 mb-lg-0">
         <h5>Kunde auswählen <a class='fas fa-pen' style='font-size:18px' href="CreateCustomer.html"></a> <a
           class='fas fa-trash-alt' style='font-size:18px'></a></h5>
       </div>
     </div>
-
-    <div class="col-sm-2">
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <b>Rechnungsnummer:</b>
+      <input type="text" name="Rechnungsnummer" value="">
+    </div>
+    <div class="col-md-6 text-center">
       <input type="checkbox" id="skonto" name="skonto">
       <label for="skonto">Skonto</label>
     </div>
-    <div class="col-sm-3">
-      <b>Akuteller Netto Preis:</b>
-      <input type="text" name="price" value="">
-      <p></p>
-    </div>
-    <div class="col-sm-3">
-      <a href="#" class="btn btn-white btn-animate">Rechnung erzeugen</a>
-    </div>
   </div>
-
-  <p></p>
-  <b>Rechnungsnummer:</b>
-  <input type="text" name="Rechnungsnummer" value="">
-  <p></p>
+</div>
 </div>
 
 <section class="contact-form-wrap section">
   <div class="container">
     <p>Klicke den Button um Leistung hinzuzufügen.</p>
 
-    <table id="myTable">
+    <table class="table table-bordered">
+      <thead>
       <tr>
-        <td>Pos Leistung</td>
-        <td>Menge EZ-Preis Einheitspreis</td>
+        <th scope="col">#</th>
+        <th scope="col">Leistung</th>
+        <th scope="col">Menge</th>
+        <th scope="col">EZ-Preis</th>
+        <th scope="col">Einheitspreis</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Schrauben</td>
+        <td>100</td>
+        <td>0,10</td>
+        <td>10</td>
+
       </tr>
       <tr>
-        <td>Row2 cell1</td>
-        <td>Row2 cell2</td>
+        <th scope="row">2</th>
+        <td>Arbeiter</td>
+        <td>2</td>
+        <td>100</td>
+        <td>200</td>
+
       </tr>
       <tr>
-        <td>Row3 cell1</td>
-        <td>Row3 cell2</td>
+        <th scope="row">3</th>
+        <td>Fenster</td>
+        <td>5</td>
+        <td>80</td>
+        <td>400</td>
+
       </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td colspan="3">Aktueller Netto Preis</td>
+        <td>610</td>
+
+      </tr>
+      </tbody>
     </table>
-    <br>
 
     <button onclick="myCreateFunction()">+</button>
+    <button onclick="myDeleteFunction()">-</button>
 
 
     <script>
@@ -133,6 +158,10 @@
       }
     </script>
   </div>
+  </div>
+
+  <div class="col-md-9 text-right">
+    <a href="#" class="btn btn-white btn-animate">Rechnung erzeugen</a>
   </div>
 </section>
 <!-- footer Start -->
